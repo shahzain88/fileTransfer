@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>Files</h1>
+<div class="articles">
+    {% for article in articles%}
+    <a href="{% url 'articles:detail' slug=article.slug %}">
+        <div class="article">
+            <h2>{{article.title}}</h2>
+            <h6>{{article.author}}</h6>
+
+            
+        </div>
+    </a>
+    {% endfor%}
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <div class="creat-article">
+        <div class="articles">
+            {% for chat in chats %}
+                <div class="">
+                    <p>{{chat.body}}</p>
+                    <h5>{{chat.date}}</h5>
+                    <h6>{{chat.author}}</h6>
+
+                </div>
+            {% endfor%}
+        </div>
+        <form class="site-form"action="{% url 'create_contact_list' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Create">
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>Files</h1>
+
+<div class="article_detail">
+    <div class="article">
+        <h2>{{article.title }}</h2>
+        <p>{{article.body }}</p>
+        <a href="/media/{{article.thumb}}" ><h3>Open File</h3></a>
+        <a href="/articles/delete/{{article.slug}}" ><h3 class="delete">Deldete File</h3></a>
+        <h6>{{article.author }}</h6>
+
+    </div>
+</div>
+
+{% endblock content %}
